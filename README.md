@@ -1,19 +1,26 @@
 # Kubernetes-two-tier-app
 A simple two-tier web application (Python/Flask) deployed on a local Kubernetes cluster to demonstrate core concepts
 ![Application Screenshot](https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/1.png?raw=true)
+
 This repository contains a complete, containerized two-tier web application designed to showcase a full development-to-deployment workflow on Kubernetes. A Python Flask frontend dynamically fetches data from a backend API by resolving its internal service name, demonstrating a core microservice communication pattern.
 ![Application Screenshot](https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/2.png?raw=true)
+
 The image displays the terminal workflow for building the application's microservices into container images using Docker. After successfully building the backend image, the same process is initiated for the frontend, preparing all necessary components for deployment to the Kubernetes cluster.
 ![Application Screenshot]( https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/3.png?raw=true) 
+
 The docker images command displays the final artifacts from the project's containerization phase. This output confirms both the backend-app and frontend-app images were successfully built and tagged, making them available for the Kubernetes cluster to pull and run as pods.
 ![Application Screenshot](https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/4.png?raw=true) 
+
 As a crucial setup step before deployment, this command directs the kubectl CLI to communicate with the docker-desktop Kubernetes cluster. This ensures the application's resources are created in the same environment where the container images are available.
  ![Application Screenshot](https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/6.png?raw=true)
+ 
  This terminal output displays the final, healthy state of the deployed two-tier application on the Kubernetes cluster. The kubectl get all command verifies that all necessary resources—including the backend and frontend Pods, Services, and Deployments—are running correctly and are ready to handle traffic.
- ![Application Screenshot](https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/7.PNG?raw=true)  
+ ![Application Screenshot](https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/7.PNG?raw=true) 
+ 
  To access the deployed application, the minikube service frontend-service command is executed, which establishes a direct network tunnel to the service inside the cluster. This process concludes by automatically opening the application's user interface in a new browser tab, confirming the deployment is successful and reachable.
-
-
+  ![Application Screenshot]( https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/8.png?raw=true)  
+  
+  This screenshot shows the final result of the project: the frontend application's user interface successfully running in a web browser. The message "Pozdrav sa backend-a!" is fetched dynamically, confirming that the frontend successfully communicated with the backend service inside the Kubernetes cluster.
 
  
  
