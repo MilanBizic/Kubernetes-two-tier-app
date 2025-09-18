@@ -10,6 +10,9 @@ The docker images command displays the final artifacts from the project's contai
 As a crucial setup step before deployment, this command directs the kubectl CLI to communicate with the docker-desktop Kubernetes cluster. This ensures the application's resources are created in the same environment where the container images are available.
  ![Application Screenshot](https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/6.png?raw=true)
  This terminal output displays the final, healthy state of the deployed two-tier application on the Kubernetes cluster. The kubectl get all command verifies that all necessary resources—including the backend and frontend Pods, Services, and Deployments—are running correctly and are ready to handle traffic.
+ ![Application Screenshot](https://github.com/MilanBizic/Kubernetes-two-tier-app/blob/main/7.PNG?raw=true)  
+ To access the deployed application, the minikube service frontend-service command is executed, which establishes a direct network tunnel to the service inside the cluster. This process concludes by automatically opening the application's user interface in a new browser tab, confirming the deployment is successful and reachable.
+
 
 
  
